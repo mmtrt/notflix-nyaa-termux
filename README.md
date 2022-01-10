@@ -51,8 +51,7 @@ curl -sL "https://github.com/mmtrt/notflix-termux/raw/termux/mivideo" -o ../usr/
 cURL **notflix** to your **$PATH** and give execute permissions.
 
 ```
-$ curl -sL "https://github.com/mmtrt/notflix-termux/raw/termux/notflix" -o ../usr/bin/notflix
-$ chmod +x ../usr/bin/notflix
+curl -sL "https://github.com/mmtrt/notflix-termux/raw/termux/notflix" -o ../usr/bin/notflix && chmod +x ../usr/bin/notflix
 ```
 - To update, just do `curl` again, no need to `chmod` anymore.
 - To uninstall, simply remove `notflix` from your **$PATH**, for example `rm -f ../usr/bin/notflix.
