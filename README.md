@@ -15,8 +15,15 @@ After this it uses [webtorrent](https://webtorrent.io/) to stream the video from
 For scraping, the script uses simple gnu utils like sed, awk, paste, cut.
 
 ## Requirements
+* [Termux](https://f-droid.org/en/packages/com.termux) - Install terminal app from f-droid then install required pkgs in Termux.
+```
+pkg up -y && pkg in binutils git nodejs python -y
+```
 
-* [webtorrent](https://webtorrent.io/) - A tool to stream torrent. `npm install webtorrent-cli -g`
+* [webtorrent](https://webtorrent.io/) - A tool to stream torrent.
+```
+npm install webtorrent-cli -g
+```
 * [mpv-android](https://play.google.com/store/apps/details?id=is.xyz.mpv) - Install player from playstore then add mpv script in termux.
 ```
 curl -sL "https://github.com/mmtrt/notflix-termux/raw/termux/mpv" -o ../usr/bin/mpv && chmod +x ../usr/bin/mpv
