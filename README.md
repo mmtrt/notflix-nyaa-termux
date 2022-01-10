@@ -17,13 +17,33 @@ For scraping, the script uses simple gnu utils like sed, awk, paste, cut.
 ## Requirements
 
 * [webtorrent](https://webtorrent.io/) - A tool to stream torrent. `npm install webtorrent-cli -g`
+* [mpv-android](https://play.google.com/store/apps/details?id=is.xyz.mpv) - Install player from playstore then add mpv script in termux.
+```
+curl -sL "https://github.com/mmtrt/notflix-termux/raw/termux/mpv" -o ../usr/bin/mpv && chmod +x ../usr/bin/mpv
+```
+
+## Optional
+
+* [MX Player](https://play.google.com/store/apps/details?id=com.mxtech.videoplayer.ad) - Install player from playstore then add MXPlayer script in termux.
+```
+curl -sL "https://github.com/mmtrt/notflix-termux/raw/termux/mxplayer" -o ../usr/bin/mpv && chmod +x ../usr/bin/mpv
+```
+* [VLC](https://play.google.com/store/apps/details?id=org.videolan.vlc) - Install player from playstore then add VLC script in termux.
+```
+curl -sL "https://github.com/mmtrt/notflix-termux/raw/termux/vlc" -o ../usr/bin/mpv && chmod +x ../usr/bin/mpv
+```
+* [Mi Video](https://play.google.com/store/apps/details?id=is.xyz.mpv) - Install player from playstore then add Mi Video script in termux.
+```
+curl -sL "https://github.com/mmtrt/notflix-termux/raw/termux/mivideo" -o ../usr/bin/mpv && chmod +x ../usr/bin/mpv
+```
+
 
 ## Installation
 
 ### cURL
 cURL **notflix** to your **$PATH** and give execute permissions.
 
-```sh
+```
 $ curl -sL "https://github.com/mmtrt/notflix-termux/raw/termux/notflix" -o ../usr/bin/notflix
 $ chmod +x ../usr/bin/notflix
 ```
