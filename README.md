@@ -47,7 +47,7 @@ curl -sL "https://github.com/mmtrt/notflix-termux/raw/termux/mivideo" -o ../usr/
 
 ## Installation
 
-### cURL
+### notflix
 cURL **notflix** to your **$PATH** and give execute permissions.
 
 ```
@@ -55,6 +55,15 @@ curl -sL "https://github.com/mmtrt/notflix-termux/raw/termux/notflix" -o ../usr/
 ```
 - To update, just do `curl` again, no need to `chmod` anymore.
 - To uninstall, simply remove `notflix` from your **$PATH**, for example `rm -f ../usr/bin/notflix.
+
+### nyaa
+cURL **nyaa** to your **$PATH** and give execute permissions.
+
+```
+curl -sL "https://github.com/mmtrt/notflix-termux/raw/termux/nyaa" -o ../usr/bin/nyaa && chmod +x ../usr/bin/nyaa
+```
+- To update, just do `curl` again, no need to `chmod` anymore.
+- To uninstall, simply remove `nyaa` from your **$PATH**, for example `rm -f ../usr/bin/nyaa.
 
 ## License
 This project is licensed under [GPL-3.0](https://raw.githubusercontent.com/Illumina/licenses/master/gpl-3.0.txt).
