@@ -49,10 +49,11 @@ sed 's/\./ /g; s/\-/ /g' "$cachedir"/titles.bw |
   sed 's/[^A-Za-z0-9 ]//g' | tr -s " " > "$cachedir"/tmp && mv "$cachedir"/tmp "$cachedir"/titles.bw
 
 awk '{print NR " - ["$0"]"}' "$cachedir"/size.bw > "$cachedir"/tmp && mv "$cachedir"/tmp "$cachedir"/size.bw
-awk '{print "[S:"$1 ", L:"$2"]" }' "$cachedir"/seedleech.bw > "$cachedir"/tmp && mv "$cachedir"/tmp "$cachedir"/seedleech.bw
+
+awk '{print "[S:"$1 " L:"$2"]" }' "$cachedir"/seedleech.bw > "$cachedir"/tmp && mv "$cachedir"/tmp "$cachedir"/seedleech.bw
 
 # Getting the line number
-LINE="$(paste -d\  "$cachedir"/size.bw "$cachedir"/titles.bw "$cachedir"/seedleech.bw |
+LINE="$(paste -d\  "$cachedir"/{size.bw,seedleech.bw,titles.bw} |
   $menu |
   cut -d\- -f1 |
   awk '{$1=$1; print}')"
