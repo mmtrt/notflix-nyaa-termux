@@ -10,6 +10,9 @@ menu="fzf"
 baseurl="https://1337x.to"
 cachedir="$HOME/.cache/notflix"
 
+# Display number of pages for result should be set from 2+
+pages="3"
+
 if [ -z "$1" ]; then
   clear
   url="$baseurl/home/"
@@ -24,6 +27,11 @@ curl -s "$url" > "$cachedir"/tmp.html
 
 # Remove other torrents from homepage
 sed -i '/Popular Music Torrents/,$d' "$cachedir"/tmp.html
+
+# Append additional result pages if arg is passed
+if [ "$1" ]; then
+for ((i=2;i<="$pages";i++)) do curl -s "$baseurl/search/$query/$i/" >> "$cachedir"/tmp.html; done
+fi
 
 # Get Titles
 grep -o '<a href="/torrent/.*</a>' "$cachedir"/tmp.html |
