@@ -24,22 +24,26 @@ pkg up -y && pkg in binutils fzf git nodejs python -y
 ```
 npm install webtorrent-cli -g
 ```
-* [mpv-android](https://play.google.com/store/apps/details?id=is.xyz.mpv) - Install player from playstore then add mpv script in termux.
+* [termux-open-url](https://github.com/mmtrt/notflix-termux/raw/termux/termux-open-url) - Add termux-open-url script as mpv script in termux to open url with players.
 ```
-curl -sL "https://github.com/mmtrt/notflix-termux/raw/termux/mpv" -o ../usr/bin/mpv && chmod +x ../usr/bin/mpv
+curl -sL "https://github.com/mmtrt/notflix-termux/raw/termux/termux-open-url" -o ../usr/bin/mpv && chmod +x ../usr/bin/mpv
 ```
 
 ## Optional
 
-* [MX Player](https://play.google.com/store/apps/details?id=com.mxtech.videoplayer.ad) - Install player from playstore then add MXPlayer script in termux.
+* [mpv-android](https://play.google.com/store/apps/details?id=is.xyz.mpv) - Install it from playstore then add mpv script in termux.
+```
+curl -sL "https://github.com/mmtrt/notflix-termux/raw/termux/mpv" -o ../usr/bin/mpv && chmod +x ../usr/bin/mpv
+```
+* [MX Player](https://play.google.com/store/apps/details?id=com.mxtech.videoplayer.ad) - Install it from playstore then add MXPlayer script in termux.
 ```
 curl -sL "https://github.com/mmtrt/notflix-termux/raw/termux/mxplayer" -o ../usr/bin/mpv && chmod +x ../usr/bin/mpv
 ```
-* [VLC](https://play.google.com/store/apps/details?id=org.videolan.vlc) - Install player from playstore then add VLC script in termux.
+* [VLC](https://play.google.com/store/apps/details?id=org.videolan.vlc) - Install it from playstore then add VLC script in termux.
 ```
 curl -sL "https://github.com/mmtrt/notflix-termux/raw/termux/vlc" -o ../usr/bin/mpv && chmod +x ../usr/bin/mpv
 ```
-* [Mi Video](https://play.google.com/store/apps/details?id=is.xyz.mpv) - Install player from playstore then add Mi Video script in termux.
+* [Mi Video](https://play.google.com/store/apps/details?id=is.xyz.mpv) - Install it from playstore then add Mi Video script in termux.
 ```
 curl -sL "https://github.com/mmtrt/notflix-termux/raw/termux/mivideo" -o ../usr/bin/mpv && chmod +x ../usr/bin/mpv
 ```
