@@ -22,6 +22,9 @@ query=${query// /+}
 
 curl -s "$url" > "$cachedir"/tmp.html
 
+# Remove other torrents from homepage
+sed -i '/Popular Music Torrents/,$d' "$cachedir"/tmp.html
+
 # Get Titles
 grep -o '<a href="/torrent/.*</a>' "$cachedir"/tmp.html |
   sed 's/<[^>]*>//g' > "$cachedir"/titles.bw
