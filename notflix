@@ -12,13 +12,15 @@ cachedir="$HOME/.cache/notflix"
 
 if [ -z "$1" ]; then
   clear
+  url="$baseurl/home/"
 else
-  query=$1
+  query="$1"
+  url="$baseurl/search/$query/1/"
 fi
 
 query=${query// /+}
 
-curl -s $baseurl/search/"$query"/1/ > "$cachedir"/tmp.html
+curl -s "$url" > "$cachedir"/tmp.html
 
 # Get Titles
 grep -o '<a href="/torrent/.*</a>' "$cachedir"/tmp.html |
