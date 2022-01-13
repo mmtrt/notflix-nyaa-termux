@@ -17,7 +17,7 @@ For scraping, the script uses simple gnu utils like sed, awk, paste, cut.
 ## Requirements
 * [Termux](https://f-droid.org/en/packages/com.termux) - Install terminal app from f-droid then install required pkgs in Termux.
 ```
-pkg up -y && pkg in binutils git nodejs python -y
+pkg up -y && pkg in binutils fzf git nodejs python -y
 ```
 
 * [webtorrent](https://webtorrent.io/) - A tool to stream torrent.
