@@ -1,6 +1,6 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
-# Dependencies - webtorrent, binutils, git, nodejs
+# Dependencies - webtorrent, binutils, git, nodejs, fzf
 
 clear
 
