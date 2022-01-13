@@ -1,0 +1,85 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+# Dependencies - webtorrent, binutils, git, nodejs, fzf
+
+clear
+
+mkdir -p "$HOME"/.cache/nyaa
+
+menu="fzf"
+baseurl="https://nyaa.si"
+cachedir="$HOME/.cache/nyaa"
+
+# Display number of pages for result should be set from 2+
+pages="2"
+
+if [ -z "$1" ]; then
+  clear
+else
+  query="$1"
+fi
+
+query=${query// /+}
+
+curl -s "$baseurl/?q=$query" > "$cachedir"/tmp.html
+
+# Append additional pages
+for ((i=2;i<="$pages";i++)); do curl -s "$baseurl/?q=$query&p=$i" >> "$cachedir"/tmp.html; done
+
+# Get Titles
+grep -o '<a href="/view/.*</a>' "$cachedir"/tmp.html | 
+  sed 's/<[^>]*>//g' | sed 's/\.[^.]*$//' > "$cachedir"/titles.bw
+
+result_count=$(wc -l "$cachedir"/titles.bw | awk '{print $1}')
+if [ "$result_count" -lt 1 ]; then
+  echo "No Result found. Try again"
+  exit 0
+fi
+
+# Seeders and Leechers
+grep -o '<td class="text.*</td>' "$cachedir"/tmp.html |
+  sed 's/<[^>]*>//g' | sed '/B/d;/-/d' | sed '3~3d' |
+  sed 'N;s/\n/ /' > "$cachedir"/seedleech.bw
+
+# Size
+grep -o '<td class="text.*B</td>' "$cachedir"/tmp.html |
+  sed -e 's/<[^>]*>//g' > "$cachedir"/size.bw
+
+# Links
+grep -o '/view/.*" ' "$cachedir"/tmp.html |
+  sed 's|"||g;/#/d' > "$cachedir"/links.bw
+
+# Clearning up some data to display
+#sed 's/\./ /g; s/\-/ /g' "$cachedir"/titles.bw | sed 's/[^A-Za-z0-9 ]//g' | tr -s " " > "$cachedir"/tmp && mv "$cachedir"/tmp "$cachedir"/titles.bw
+
+awk '{print NR " - ["$0"]"}' "$cachedir"/size.bw > "$cachedir"/tmp && mv "$cachedir"/tmp "$cachedir"/size.bw
+
+awk '{print "[S:"$1 " L:"$2"]" }' "$cachedir"/seedleech.bw > "$cachedir"/tmp && mv "$cachedir"/tmp "$cachedir"/seedleech.bw
+
+# Getting the line number
+LINE="$(paste -d\  "$cachedir"/{size.bw,seedleech.bw,titles.bw} |
+  $menu |
+  cut -d\- -f1 |
+  awk '{$1=$1; print}')"
+#echo "Select your stream"
+#read LINE
+
+if [ -z "$LINE" ]; then
+  echo "No Result selected. Exiting..."
+  exit 0
+fi
+
+clear
+
+echo "Searching Magnet seeds"
+url=$(head -n $LINE "$cachedir"/links.bw | tail -n +$LINE)
+fullURL="${baseurl}${url}"
+
+# Requesting page for magnet link
+curl -s "$fullURL" > "$cachedir"/tmp.html
+magnet=$(grep -o "magnet.*" "$cachedir"/tmp.html | sed 's/amp;//g' | cut -d'"' -f1)
+
+# Clear webtorrent cache at exit
+trap "rm -rf $TMPDIR/webtorrent/*" EXIT
+
+webtorrent "$magnet" --mpv --no-quit
