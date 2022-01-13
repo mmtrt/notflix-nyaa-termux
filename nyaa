@@ -76,7 +76,7 @@ url=$(head -n $LINE "$cachedir"/links.bw | tail -n +$LINE)
 fullURL="${baseurl}${url}"
 
 # Requesting page for magnet link
-curl -s "$fullURL" > "$cachedir"/tmp.html
+curl -s $fullURL > "$cachedir"/tmp.html
 magnet=$(grep -o "magnet.*" "$cachedir"/tmp.html | sed 's/amp;//g' | cut -d'"' -f1)
 
 # Clear webtorrent cache at exit
