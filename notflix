@@ -72,7 +72,7 @@ fullURL="${baseurl}${url}/"
 
 # Requesting page for magnet link
 curl -s "$fullURL" > "$cachedir"/tmp.html
-magnet=$(grep -Eo "magnet:\?xt=urn:btih:[a-zA-Z0-9]*" "$cachedir"/tmp.html | head -n 1)
+magnet=$(grep -o "magnet.*" "$cachedir"/tmp.html | cut -d'"' -f1 | head -n 1)
 
 # Clear webtorrent cache at exit
 trap "rm -rf $TMPDIR/webtorrent/*" EXIT
