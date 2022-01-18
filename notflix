@@ -43,6 +43,39 @@ if [ "$result_count" -lt 1 ]; then
   exit 0
 fi
 
+if [ -z "$1" ]; then
+
+# Removing cached files required for fresh result in homepage url
+rm "$cachedir"/{tmp2.html,seedleech.bw,size.bw,seedleech.bw} 2>/dev/null
+
+# Getting links of homepage strip torrent entries
+grep -E '/torrent/' "$cachedir"/tmp.html | sed -E 's#.*(/torrent/.*)/">.*/#\1#;s/td>//g' |
+  sed -n '/>/p' | sed 's/>//g' > "$cachedir"/links2.bw
+
+hlines=$(cat "$cachedir"/links2.bw)
+
+# Getting each link data of homepage strip torrent entries to tmp2
+for i in $hlines; do curl -s "${baseurl}${i}/" >> "$cachedir"/tmp2.html; done
+
+# Seeders and Leechers for homepage strip torrents
+grep -o '<span class="seeds.*</span>\|<span class="leeches.*</span>' "$cachedir"/tmp2.html |
+  sed 's/<[^>]*>//g' | sed 'N;s/\n/ /' > "$cachedir"/seedleech.bw
+
+# Size for homepage strip torrents
+grep -o 'size</strong>.*' "$cachedir"/tmp2.html | sed 's/<span class="seeds">.*<\/span>//g' |
+  sed -e 's/<[^>]*>//g' | awk '{print $2, $3}' > "$cachedir"/size.bw
+
+# Seeders and Leechers
+grep -o '<td class="coll-2 seeds.*</td>\|<td class="coll-3 leeches.*</td>' "$cachedir"/tmp.html |
+  sed 's/<[^>]*>//g' | sed 'N;s/\n/ /' >> "$cachedir"/seedleech.bw
+
+# Size
+grep -o '<td class="coll-4 size.*</td>' "$cachedir"/tmp.html |
+  sed 's/<span class="seeds">.*<\/span>//g' |
+  sed -e 's/<[^>]*>//g' >> "$cachedir"/size.bw
+
+else
+
 # Seeders and Leechers
 grep -o '<td class="coll-2 seeds.*</td>\|<td class="coll-3 leeches.*</td>' "$cachedir"/tmp.html |
   sed 's/<[^>]*>//g' | sed 'N;s/\n/ /' > "$cachedir"/seedleech.bw
@@ -51,6 +84,8 @@ grep -o '<td class="coll-2 seeds.*</td>\|<td class="coll-3 leeches.*</td>' "$cac
 grep -o '<td class="coll-4 size.*</td>' "$cachedir"/tmp.html |
   sed 's/<span class="seeds">.*<\/span>//g' |
   sed -e 's/<[^>]*>//g' > "$cachedir"/size.bw
+
+fi
 
 # Links
 grep -E '/torrent/' "$cachedir"/tmp.html |
