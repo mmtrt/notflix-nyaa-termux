@@ -61,8 +61,6 @@ LINE="$(paste -d\  "$cachedir"/{size.bw,seedleech.bw,titles.bw} |
   $menu |
   cut -d\- -f1 |
   awk '{$1=$1; print}')"
-#echo "Select your stream"
-#read LINE
 
 if [ -z "$LINE" ]; then
   echo "No Result selected. Exiting..."
