@@ -30,7 +30,7 @@ for ((i=2;i<="$pages";i++)); do curl -s "$baseurl/?q=$query&p=$i" >> "$cachedir"
 grep -o '<a href="/view/.*</a>' "$cachedir"/tmp.html | 
   sed 's/<[^>]*>//g' | sed 's/\.[^.]*$//' > "$cachedir"/titles.bw
 
-result_count=$(wc -l "$cachedir"/titles.bw | awk '{print $1}')
+result_count=$(grep -c '.*' "$cachedir"/titles.bw)
 if [ "$result_count" -lt 1 ]; then
   echo "No Result found. Try again"
   exit 0
