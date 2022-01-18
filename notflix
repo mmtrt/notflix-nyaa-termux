@@ -34,8 +34,8 @@ for ((i=2;i<="$pages";i++)) do curl -s "$baseurl/search/$query/$i/" >> "$cachedi
 fi
 
 # Get Titles
-grep -o '<a href="/torrent/.*</a>' "$cachedir"/tmp.html |
-  sed 's/<[^>]*>//g' > "$cachedir"/titles.bw
+grep -o '/torrent/.*' "$cachedir"/tmp.html |
+  sed 's/<[^>]*>//g;s|/| |g' | awk '{print $3}' > "$cachedir"/titles.bw
 
 result_count=$(grep -c '.*' "$cachedir"/titles.bw)
 if [ "$result_count" -lt 1 ]; then
