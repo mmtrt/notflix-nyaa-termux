@@ -45,6 +45,10 @@ grep -o '<td class="text.*B</td>' "$cachedir"/tmp.html |
 grep -o '/view/.*" ' "$cachedir"/tmp.html |
   sed 's|"||g;/#/d' > "$cachedir"/links.bw
 
+# Magnets
+grep -o 'magnet:.*' "$cachedir"/tmp.html |
+ sed 's/amp;//g' | cut -d'"' -f1 > "$cachedir"/magnet.bw
+
 # Clearning up some data to display
 #sed 's/\./ /g; s/\-/ /g' "$cachedir"/titles.bw | sed 's/[^A-Za-z0-9 ]//g' | tr -s " " > "$cachedir"/tmp && mv "$cachedir"/tmp "$cachedir"/titles.bw
 
@@ -65,13 +69,8 @@ fi
 
 clear
 
-echo "Searching Magnet seeds"
-url=$(head -n $LINE "$cachedir"/links.bw | tail -n +$LINE)
-fullURL="${baseurl}${url}"
-
-# Requesting page for magnet link
-curl -s $fullURL > "$cachedir"/tmp.html
-magnet=$(grep -o "magnet.*" "$cachedir"/tmp.html | sed 's/amp;//g' | cut -d'"' -f1)
+# Getting magnet link for selected line
+magnet=$(head -n $LINE "$cachedir"/magnet.bw | tail -n +$LINE)
 
 # Clear webtorrent cache at exit
 trap "rm -rf $TMPDIR/webtorrent/*" EXIT
