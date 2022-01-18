@@ -1,6 +1,6 @@
-#!/data/data/com.termux/files/usr/bin/bash
+#!/bin/bash
 
-# Dependencies - webtorrent, binutils, git, nodejs, fzf
+# Dependencies - webtorrent-cli, binutils, git, nodejs, fzf
 
 clear
 
@@ -73,6 +73,6 @@ clear
 magnet=$(head -n $LINE "$cachedir"/magnet.bw | tail -n +$LINE)
 
 # Clear webtorrent cache at exit
-trap "rm -rf $TMPDIR/webtorrent/*" EXIT
+trap "rm -rf $TMP/webtorrent/*" EXIT
 
-webtorrent "$magnet" --mpv --no-quit
+webtorrent "$magnet" --vlc
