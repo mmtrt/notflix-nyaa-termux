@@ -55,7 +55,7 @@ grep -o '<td class="coll-4 size.*</td>' "$cachedir"/tmp.html |
 # Links
 grep -E '/torrent/' "$cachedir"/tmp.html |
   sed -E 's#.*(/torrent/.*)/">.*/#\1#' |
-  sed 's/td>//g' > "$cachedir"/links.bw
+  sed 's/td>//g;s/>//g' > "$cachedir"/links.bw
 
 # Clearning up some data to display
 sed 's/\./ /g; s/\-/ /g' "$cachedir"/titles.bw |
