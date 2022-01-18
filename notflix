@@ -37,7 +37,7 @@ fi
 grep -o '<a href="/torrent/.*</a>' "$cachedir"/tmp.html |
   sed 's/<[^>]*>//g' > "$cachedir"/titles.bw
 
-result_count=$(wc -l "$cachedir"/titles.bw | awk '{print $1}')
+result_count=$(grep -c '.*' "$cachedir"/titles.bw)
 if [ "$result_count" -lt 1 ]; then
   echo "No Result found. Try again"
   exit 0
