@@ -13,11 +13,7 @@ cachedir="$HOME/.cache/nyaa"
 # Display number of pages for result should be set from 2+
 pages="2"
 
-if [ -z "$1" ]; then
-  clear
-else
-  query="$1"
-fi
+query="$1"
 
 query=${query// /+}
 
