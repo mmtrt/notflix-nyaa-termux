@@ -15,39 +15,15 @@ After this it uses [webtorrent](https://webtorrent.io/) to stream the video from
 For scraping, the script uses simple gnu utils like sed, awk, paste, cut.
 
 ## Requirements
-* [Termux](https://f-droid.org/en/packages/com.termux) - Install terminal app from f-droid then install required pkgs in Termux.
+* [cygwin](https://cygwin.com/install.html) - Install cygwin then install required pkgs by selecting them in initial setup.
 ```
-pkg up -y && pkg in binutils fzf git nodejs python -y
+binutils fzf git
 ```
-
-* [webtorrent](https://webtorrent.io/) - A tool to stream torrent.
+* [webtorrent-cli](https://github.com/webtorrent/webtorrent-cli) - A tool to stream torrent.
 ```
 npm install webtorrent-cli -g
 ```
-* [termux-open-url](https://github.com/mmtrt/notflix-termux/raw/termux/src/termux-open-url) - Add termux-open-url script as mpv script in termux to open url with players.
-```
-curl -sL "https://github.com/mmtrt/notflix-termux/raw/termux/src/termux-open-url" -o ../usr/bin/mpv && chmod +x ../usr/bin/mpv
-```
-
-## Optional
-
-* [mpv-android](https://play.google.com/store/apps/details?id=is.xyz.mpv) - Install it from playstore then add mpv script in termux.
-```
-curl -sL "https://github.com/mmtrt/notflix-termux/raw/termux/src/mpv" -o ../usr/bin/mpv && chmod +x ../usr/bin/mpv
-```
-* [MX Player](https://play.google.com/store/apps/details?id=com.mxtech.videoplayer.ad) - Install it from playstore then add MXPlayer script in termux.
-```
-curl -sL "https://github.com/mmtrt/notflix-termux/raw/termux/src/mxplayer" -o ../usr/bin/mpv && chmod +x ../usr/bin/mpv
-```
-* [VLC](https://play.google.com/store/apps/details?id=org.videolan.vlc) - Install it from playstore then add VLC script in termux.
-```
-curl -sL "https://github.com/mmtrt/notflix-termux/raw/termux/src/vlc" -o ../usr/bin/mpv && chmod +x ../usr/bin/mpv
-```
-* [Mi Video](https://play.google.com/store/apps/details?id=is.xyz.mpv) - Install it from playstore then add Mi Video script in termux.
-```
-curl -sL "https://github.com/mmtrt/notflix-termux/raw/termux/src/mivideo" -o ../usr/bin/mpv && chmod +x ../usr/bin/mpv
-```
-
+* [vlc](https://www.videolan.org/vlc/download-windows.html) - Install vlc then add its location in PATH environment to be available.
 
 ## Installation
 
@@ -55,19 +31,19 @@ curl -sL "https://github.com/mmtrt/notflix-termux/raw/termux/src/mivideo" -o ../
 cURL **notflix** to your **$PATH** and give execute permissions.
 
 ```
-curl -sL "https://github.com/mmtrt/notflix-termux/raw/termux/notflix" -o ../usr/bin/notflix && chmod +x ../usr/bin/notflix
+curl -sL "https://github.com/mmtrt/notflix-termux/raw/termux/notflix" > /bin/notflix && chmod +x /bin/notflix
 ```
 - To update, just do `curl` again, no need to `chmod` anymore.
-- To uninstall, simply remove `notflix` from your **$PATH**, for example `rm -f ../usr/bin/notflix.
+- To uninstall, simply remove `notflix` from your **$PATH**, for example `rm -f /bin/notflix.
 
 ### nyaa
 cURL **nyaa** to your **$PATH** and give execute permissions.
 
 ```
-curl -sL "https://github.com/mmtrt/notflix-termux/raw/termux/nyaa" -o ../usr/bin/nyaa && chmod +x ../usr/bin/nyaa
+curl -sL "https://github.com/mmtrt/notflix-termux/raw/termux/nyaa" > /bin/nyaa && chmod +x /bin/nyaa
 ```
 - To update, just do `curl` again, no need to `chmod` anymore.
-- To uninstall, simply remove `nyaa` from your **$PATH**, for example `rm -f ../usr/bin/nyaa.
+- To uninstall, simply remove `nyaa` from your **$PATH**, for example `rm -f /bin/nyaa.
 
 ## License
 This project is licensed under [GPL-3.0](https://raw.githubusercontent.com/Illumina/licenses/master/gpl-3.0.txt).
