@@ -19,6 +19,10 @@ For scraping, the script uses simple gnu utils like sed, awk, paste, cut.
 ```
 binutils fzf git
 ```
+* Install nodejs in cygwin by opening its terminal then using this command.
+```
+curl -sL "https://nodejs.org/dist/latest/win-x64/node.exe" > /bin/node.exe
+```
 * [webtorrent-cli](https://github.com/webtorrent/webtorrent-cli) - A tool to stream torrent.
 ```
 npm install webtorrent-cli -g
