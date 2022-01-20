@@ -35,7 +35,7 @@ npm install webtorrent-cli -g
 cURL **notflix** to your **$PATH** and give execute permissions.
 
 ```
-curl -sL "https://github.com/mmtrt/notflix-termux/raw/termux/notflix" > /bin/notflix && chmod +x /bin/notflix
+curl -sL "https://github.com/mmtrt/notflix-termux/raw/win/notflix" > /bin/notflix && chmod +x /bin/notflix
 ```
 - To update, just do `curl` again, no need to `chmod` anymore.
 - To uninstall, simply remove `notflix` from your **$PATH**, for example `rm -f /bin/notflix.
@@ -44,7 +44,7 @@ curl -sL "https://github.com/mmtrt/notflix-termux/raw/termux/notflix" > /bin/not
 cURL **nyaa** to your **$PATH** and give execute permissions.
 
 ```
-curl -sL "https://github.com/mmtrt/notflix-termux/raw/termux/nyaa" > /bin/nyaa && chmod +x /bin/nyaa
+curl -sL "https://github.com/mmtrt/notflix-termux/raw/win/nyaa" > /bin/nyaa && chmod +x /bin/nyaa
 ```
 - To update, just do `curl` again, no need to `chmod` anymore.
 - To uninstall, simply remove `nyaa` from your **$PATH**, for example `rm -f /bin/nyaa.
