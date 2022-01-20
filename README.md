@@ -19,15 +19,25 @@ For scraping, the script uses simple gnu utils like sed, awk, paste, cut.
 ```
 binutils fzf git
 ```
-* Install nodejs in cygwin by opening its terminal then using this command.
+* [nodejs](https://nodejs.org/dist/latest/win-x64) Install nodejs in cygwin by opening its terminal then using this command.
 ```
-curl -sL "https://nodejs.org/dist/latest/win-x64/node.exe" > /bin/node.exe
+curl -sL "https://nodejs.org/dist/latest/win-x64/node.exe" > /bin/node.exe && chmod +x /bin/node.exe
 ```
+* [npn-cli](https://github.com/npm/cli) - Install npm-cli
+
+`git clone --depth 1 https://github.com/npm/cli.git`
+
+`(cd cli/node_modules/ ; rm -rf libnpmfund ; cp -r ../workspaces/libnpmfund/ .)`
+
+`(cd cli/node_modules/@npmcli ; rm -rf arborist ; cp -r ../../workspaces/arborist/ .)`
+
+`(cd cli/ ; node bin/npm-cli.js install -g npm ; cd .. ; rm -rf ./cli)`
+
 * [webtorrent-cli](https://github.com/webtorrent/webtorrent-cli) - A tool to stream torrent.
 ```
 npm install webtorrent-cli -g
 ```
-* [vlc](https://www.videolan.org/vlc/download-windows.html) - Install vlc then add its location in PATH environment to be available.
+* [vlc](https://www.videolan.org/vlc/download-windows.html) - Install vlc media player.
 
 ## Installation
 
