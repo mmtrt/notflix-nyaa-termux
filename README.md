@@ -30,7 +30,7 @@ git clone --depth 1 https://github.com/npm/cli.git
 ```
 
 ```
-(cd cli/node_modules/ ; rm -rf libnpmfund ; cp -r ../workspaces/libnpmfund/ .)
+(cd cli/node_modules ; rm -rf libnpmfund ; cp -r ../workspaces/libnpmfund/ .)
 ```
 
 ```
@@ -38,7 +38,7 @@ git clone --depth 1 https://github.com/npm/cli.git
 ```
 
 ```
-(cd cli/ ; node bin/npm-cli.js install -g npm ; cd .. ; rm -rf ./cli)
+(cd cli ; node bin/npm-cli.js install -g npm ; cd .. ; rm -rf ./cli)
 ```
 
 * [webtorrent-cli](https://github.com/webtorrent/webtorrent-cli) - A tool to stream torrent.
