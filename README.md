@@ -19,7 +19,7 @@ For scraping, the script uses simple gnu utils like sed, awk, paste, cut.
 ```
 binutils fzf git
 ```
-* [nodejs](https://nodejs.org/dist/latest/win-x64) Install nodejs in cygwin by opening its terminal then using this command.
+* [nodejs](https://nodejs.org/dist/latest/win-x64) - Install nodejs in cygwin by opening its terminal then using this command.
 ```
 curl -sL "https://nodejs.org/dist/latest/win-x64/node.exe" > /bin/node.exe && chmod +x /bin/node.exe
 ```
