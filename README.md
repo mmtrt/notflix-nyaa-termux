@@ -23,15 +23,23 @@ binutils fzf git
 ```
 curl -sL "https://nodejs.org/dist/latest/win-x64/node.exe" > /bin/node.exe && chmod +x /bin/node.exe
 ```
-* [npn-cli](https://github.com/npm/cli) - Install npm-cli
+* [npm-cli](https://github.com/npm/cli) - Install npm-cli
 
-`git clone --depth 1 https://github.com/npm/cli.git`
+```
+git clone --depth 1 https://github.com/npm/cli.git
+```
 
-`(cd cli/node_modules/ ; rm -rf libnpmfund ; cp -r ../workspaces/libnpmfund/ .)`
+```
+(cd cli/node_modules/ ; rm -rf libnpmfund ; cp -r ../workspaces/libnpmfund/ .)
+```
 
-`(cd cli/node_modules/@npmcli ; rm -rf arborist ; cp -r ../../workspaces/arborist/ .)`
+```
+(cd cli/node_modules/@npmcli ; rm -rf arborist ; cp -r ../../workspaces/arborist/ .)
+```
 
-`(cd cli/ ; node bin/npm-cli.js install -g npm ; cd .. ; rm -rf ./cli)`
+```
+(cd cli/ ; node bin/npm-cli.js install -g npm ; cd .. ; rm -rf ./cli)
+```
 
 * [webtorrent-cli](https://github.com/webtorrent/webtorrent-cli) - A tool to stream torrent.
 ```
