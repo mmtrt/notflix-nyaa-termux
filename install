@@ -1,21 +1,19 @@
 #!/bin/bash
 
-# Installing nodejs windows version
-
+# nodejs windows version
 curl -sL "https://nodejs.org/dist/latest/win-x64/node.exe" > /bin/node.exe && chmod +x /bin/node.exe
 
-
-# Installing npmcli
-
+# npmcli
 git clone --depth 1 https://github.com/npm/cli.git
-
 (cd cli/node_modules ; rm -rf libnpmfund ; cp -r ../workspaces/libnpmfund/ .)
-
 (cd cli/node_modules/@npmcli ; rm -rf arborist ; cp -r ../../workspaces/arborist/ .)
-
 (cd cli ; node bin/npm-cli.js install -g npm ; cd .. ; rm -rf ./cli)
 
-
-# Installing webtorrent-cli
-
+# webtorrent-cli
 npm install webtorrent-cli -g
+
+# notflix
+curl -sL "https://github.com/mmtrt/notflix-termux/raw/win/notflix" > /bin/notflix && chmod +x /bin/notflix
+
+# nyaa
+curl -sL "https://github.com/mmtrt/notflix-termux/raw/win/nyaa" > /bin/nyaa && chmod +x /bin/nyaa
