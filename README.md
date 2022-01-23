@@ -19,6 +19,17 @@ For scraping, the script uses simple gnu utils like sed, awk, paste, cut.
 ```
 binutils fzf git
 ```
+
+* [vlc](https://www.videolan.org/vlc/download-windows.html) - Install vlc media player.
+
+## Using install script
+
+* [Install](https://github.com/mmtrt/notflix-termux/raw/win/install) - Install script which automates all below instructions.
+```
+curl -sL "https://github.com/mmtrt/notflix-termux/raw/win/install" > install && chmod +x install && ./install
+```
+## Using manual method
+
 * [nodejs](https://nodejs.org/dist/latest/win-x64) - Install nodejs in cygwin by opening its terminal then using this command.
 ```
 curl -sL "https://nodejs.org/dist/latest/win-x64/node.exe" > /bin/node.exe && chmod +x /bin/node.exe
@@ -45,7 +56,6 @@ git clone --depth 1 https://github.com/npm/cli.git
 ```
 npm install webtorrent-cli -g
 ```
-* [vlc](https://www.videolan.org/vlc/download-windows.html) - Install vlc media player.
 
 ## Installation
 
