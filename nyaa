@@ -13,9 +13,7 @@ cachedir="$HOME/.cache/nyaa"
 # Display number of pages for result should be set from 2+
 pages="2"
 
-query="$1"
-
-query=${query// /+}
+query=$(printf '%s' "$*" | tr ' ' '+' )
 
 curl -s "$baseurl/?q=$query" > "$cachedir"/tmp.html
 
