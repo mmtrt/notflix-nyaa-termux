@@ -24,9 +24,9 @@ binutils fzf git
 
 ## Using install script
 
-* [Install](https://github.com/mmtrt/notflix-termux/raw/win/install) - Install script which automates all below instructions.
+* [Install](https://github.com/mmtrt/notflix-nyaa-termux/raw/win/install) - Install script which automates all below instructions.
 ```
-curl -sL "https://github.com/mmtrt/notflix-termux/raw/win/install" > install && chmod +x install && ./install
+curl -sL "https://github.com/mmtrt/notflix-nyaa-termux/raw/win/install" > install && chmod +x install && ./install
 ```
 ## Using manual method
 
@@ -63,7 +63,7 @@ npm install webtorrent-cli -g
 cURL **notflix** to your **$PATH** and give execute permissions.
 
 ```
-curl -sL "https://github.com/mmtrt/notflix-termux/raw/win/notflix" > /bin/notflix && chmod +x /bin/notflix
+curl -sL "https://github.com/mmtrt/notflix-nyaa-termux/raw/win/notflix" > /bin/notflix && chmod +x /bin/notflix
 ```
 - To update, just do `curl` again, no need to `chmod` anymore.
 - To uninstall, simply remove `notflix` from your **$PATH**, for example `rm -f /bin/notflix.
@@ -72,7 +72,7 @@ curl -sL "https://github.com/mmtrt/notflix-termux/raw/win/notflix" > /bin/notfli
 cURL **nyaa** to your **$PATH** and give execute permissions.
 
 ```
-curl -sL "https://github.com/mmtrt/notflix-termux/raw/win/nyaa" > /bin/nyaa && chmod +x /bin/nyaa
+curl -sL "https://github.com/mmtrt/notflix-nyaa-termux/raw/win/nyaa" > /bin/nyaa && chmod +x /bin/nyaa
 ```
 - To update, just do `curl` again, no need to `chmod` anymore.
 - To uninstall, simply remove `nyaa` from your **$PATH**, for example `rm -f /bin/nyaa.
