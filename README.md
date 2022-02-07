@@ -24,28 +24,28 @@ pkg up -y && pkg in binutils fzf git nodejs python -y
 ```
 npm install webtorrent-cli -g
 ```
-* [termux-open-url](https://github.com/mmtrt/notflix-termux/raw/termux/src/termux-open-url) - Add termux-open-url script as mpv script in termux to open url with players.
+* [termux-open-url](https://github.com/mmtrt/notflix-nyaa-termux/raw/termux/src/termux-open-url) - Add termux-open-url script as mpv script in termux to open url with players.
 ```
-curl -sL "https://github.com/mmtrt/notflix-termux/raw/termux/src/termux-open-url" -o ../usr/bin/mpv && chmod +x ../usr/bin/mpv
+curl -sL "https://github.com/mmtrt/notflix-nyaa-termux/raw/termux/src/termux-open-url" -o ../usr/bin/mpv && chmod +x ../usr/bin/mpv
 ```
 
 ## Optional
 
 * [mpv-android](https://play.google.com/store/apps/details?id=is.xyz.mpv) - Install it from playstore then add mpv script in termux.
 ```
-curl -sL "https://github.com/mmtrt/notflix-termux/raw/termux/src/mpv" -o ../usr/bin/mpv && chmod +x ../usr/bin/mpv
+curl -sL "https://github.com/mmtrt/notflix-nyaa-termux/raw/termux/src/mpv" -o ../usr/bin/mpv && chmod +x ../usr/bin/mpv
 ```
 * [MX Player](https://play.google.com/store/apps/details?id=com.mxtech.videoplayer.ad) - Install it from playstore then add MXPlayer script in termux.
 ```
-curl -sL "https://github.com/mmtrt/notflix-termux/raw/termux/src/mxplayer" -o ../usr/bin/mpv && chmod +x ../usr/bin/mpv
+curl -sL "https://github.com/mmtrt/notflix-nyaa-termux/raw/termux/src/mxplayer" -o ../usr/bin/mpv && chmod +x ../usr/bin/mpv
 ```
 * [VLC](https://play.google.com/store/apps/details?id=org.videolan.vlc) - Install it from playstore then add VLC script in termux.
 ```
-curl -sL "https://github.com/mmtrt/notflix-termux/raw/termux/src/vlc" -o ../usr/bin/mpv && chmod +x ../usr/bin/mpv
+curl -sL "https://github.com/mmtrt/notflix-nyaa-termux/raw/termux/src/vlc" -o ../usr/bin/mpv && chmod +x ../usr/bin/mpv
 ```
 * [Mi Video](https://play.google.com/store/apps/details?id=is.xyz.mpv) - Install it from playstore then add Mi Video script in termux.
 ```
-curl -sL "https://github.com/mmtrt/notflix-termux/raw/termux/src/mivideo" -o ../usr/bin/mpv && chmod +x ../usr/bin/mpv
+curl -sL "https://github.com/mmtrt/notflix-nyaa-termux/raw/termux/src/mivideo" -o ../usr/bin/mpv && chmod +x ../usr/bin/mpv
 ```
 
 
@@ -55,7 +55,7 @@ curl -sL "https://github.com/mmtrt/notflix-termux/raw/termux/src/mivideo" -o ../
 cURL **notflix** to your **$PATH** and give execute permissions.
 
 ```
-curl -sL "https://github.com/mmtrt/notflix-termux/raw/termux/notflix" -o ../usr/bin/notflix && chmod +x ../usr/bin/notflix
+curl -sL "https://github.com/mmtrt/notflix-nyaa-termux/raw/termux/notflix" -o ../usr/bin/notflix && chmod +x ../usr/bin/notflix
 ```
 - To update, just do `curl` again, no need to `chmod` anymore.
 - To uninstall, simply remove `notflix` from your **$PATH**, for example `rm -f ../usr/bin/notflix.
@@ -64,7 +64,7 @@ curl -sL "https://github.com/mmtrt/notflix-termux/raw/termux/notflix" -o ../usr/
 cURL **nyaa** to your **$PATH** and give execute permissions.
 
 ```
-curl -sL "https://github.com/mmtrt/notflix-termux/raw/termux/nyaa" -o ../usr/bin/nyaa && chmod +x ../usr/bin/nyaa
+curl -sL "https://github.com/mmtrt/notflix-nyaa-termux/raw/termux/nyaa" -o ../usr/bin/nyaa && chmod +x ../usr/bin/nyaa
 ```
 - To update, just do `curl` again, no need to `chmod` anymore.
 - To uninstall, simply remove `nyaa` from your **$PATH**, for example `rm -f ../usr/bin/nyaa.
