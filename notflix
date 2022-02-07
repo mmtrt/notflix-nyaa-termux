@@ -17,11 +17,9 @@ if [ -z "$1" ]; then
   clear
   url="$baseurl/home/"
 else
-  query="$1"
+  query=$(printf '%s' "$*" | tr ' ' '+' )
   url="$baseurl/search/$query/1/"
 fi
-
-query=${query// /+}
 
 curl -s "$url" > "$cachedir"/tmp.html
 
