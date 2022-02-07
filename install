@@ -13,7 +13,7 @@ git clone --depth 1 https://github.com/npm/cli.git
 npm install webtorrent-cli -g
 
 # notflix
-curl -sL "https://github.com/mmtrt/notflix-termux/raw/win/notflix" > /bin/notflix && chmod +x /bin/notflix
+curl -sL "https://github.com/mmtrt/notflix-nyaa-termux/raw/win/notflix" > /bin/notflix && chmod +x /bin/notflix
 
 # nyaa
-curl -sL "https://github.com/mmtrt/notflix-termux/raw/win/nyaa" > /bin/nyaa && chmod +x /bin/nyaa
+curl -sL "https://github.com/mmtrt/notflix-nyaa-termux/raw/win/nyaa" > /bin/nyaa && chmod +x /bin/nyaa
